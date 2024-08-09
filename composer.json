@@ -1,0 +1,42 @@
+{
+    "name": "thgnet/phpstan-plugins",
+    "type": "library",
+    "description": "Plugins for PHPStan",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Giovanni Giacobbi",
+            "email": "giovanni@giacobbi.net",
+            "role": "Maintainer"
+        }
+    ],
+    "config": {
+        "autoloader-suffix": "__thgnet_phpstan"
+    },
+    "require": {
+        "php": ">=7.2",
+        "phpstan/phpstan": "^1.10"
+    },
+    "require-dev": {
+        "thgnet/fixup-source-files": "^0.4.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "thgnet\\PHPStan\\": "lib/"
+        }
+    },
+    "scripts": {
+        "test:syntax:fixup": "./tests/run_source_fixup.php check",
+        "test:syntax": [
+            "@test:syntax:fixup"
+        ],
+        "test:static:phpstan": "./tests/run_phpstan.php --no-progress",
+        "test:static": [
+            "@test:static:phpstan"
+        ],
+        "test": [
+            "@test:syntax",
+            "@test:static"
+        ]
+    }
+}

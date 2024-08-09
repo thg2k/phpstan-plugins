@@ -1,0 +1,8 @@
+parameters:
+	level: 9
+	phpVersion: 70200
+	treatPhpDocTypesAsCertain: false
+	reportUnmatchedIgnoredErrors: true
+	paths:
+		- lib
+	tmpDir: .phpstan.cache

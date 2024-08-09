@@ -1,0 +1,6 @@
+services:
+	typeSpecifier:
+		class: thgnet\PHPStan\BetterTypeSpecifier\TypeSpecifier
+		factory: @typeSpecifierFactory::create
+	typeSpecifierFactory:
+		class: thgnet\PHPStan\BetterTypeSpecifier\TypeSpecifierFactory

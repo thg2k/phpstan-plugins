@@ -1,0 +1,107 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "af527464c5ff5cd6dbffb8c8e9cce54e",
+    "packages": [
+        {
+            "name": "phpstan/phpstan",
+            "version": "1.11.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpstan/phpstan.git",
+                "reference": "640410b32995914bde3eed26fa89552f9c2c082f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/640410b32995914bde3eed26fa89552f9c2c082f",
+                "reference": "640410b32995914bde3eed26fa89552f9c2c082f",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2|^8.0"
+            },
+            "conflict": {
+                "phpstan/phpstan-shim": "*"
+            },
+            "bin": [
+                "phpstan",
+                "phpstan.phar"
+            ],
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHPStan - PHP Static Analysis Tool",
+            "keywords": [
+                "dev",
+                "static analysis"
+            ],
+            "funding": [
+                {
+                    "url": "https://github.com/ondrejmirtes",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/phpstan",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-08-08T09:02:50+00:00"
+        }
+    ],
+    "packages-dev": [
+        {
+            "name": "thgnet/fixup-source-files",
+            "version": "v0.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thg2k/fixup-source-files.git",
+                "reference": "c2fe2dc6152cdce5ce59f653f52d88010f528fab"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thg2k/fixup-source-files/zipball/c2fe2dc6152cdce5ce59f653f52d88010f528fab",
+                "reference": "c2fe2dc6152cdce5ce59f653f52d88010f528fab",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "bin": [
+                "bin/fixup_source_files.php"
+            ],
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "Giovanni Giacobbi",
+                    "email": "giovanni@giacobbi.net"
+                }
+            ],
+            "description": "Just another source files fixer",
+            "time": "2023-04-24T14:41:12+00:00"
+        }
+    ],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=7.2"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
+}
