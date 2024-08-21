@@ -12,6 +12,7 @@ all: phpstan-plugins.phar
 	@touch $@
 
 phpstan-plugins.phar: stub.php bootstrap.php $(source_files) .ts.$(git_ts)
+	@find . -maxdepth 1 -name ".ts.*" -not -name ".ts.$(git_ts)" -delete
 	@echo -en "\n[+] Building phar file...\n"
 	@$(PHP) -d phar.readonly=0 $(PHAR) pack \
 		-f $@ \
