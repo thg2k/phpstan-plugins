@@ -19,7 +19,8 @@
     },
     "require-dev": {
         "thgnet/fixup-source-files": "^0.4.1",
-        "phpunit/phpunit": "^8.5"
+        "phpunit/phpunit": "^8.5",
+        "seld/phar-utils": "^1.2"
     },
     "autoload": {
         "psr-4": {
