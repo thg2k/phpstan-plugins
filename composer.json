@@ -18,25 +18,36 @@
         "phpstan/phpstan": "^1.10"
     },
     "require-dev": {
-        "thgnet/fixup-source-files": "^0.4.1"
+        "thgnet/fixup-source-files": "^0.4.1",
+        "phpunit/phpunit": "^8.5"
     },
     "autoload": {
         "psr-4": {
             "thgnet\\PHPStan\\": "lib/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "thgnet\\tests\\PHPStan\\": "tests/"
+        }
+    },
     "scripts": {
-        "test:syntax:fixup": "./tests/run_source_fixup.php check",
+        "test:syntax:fixup": "./vendor/bin/fixup_source_files.php -ignore-path .phpstan.cache check",
         "test:syntax": [
             "@test:syntax:fixup"
         ],
-        "test:static:phpstan": "./tests/run_phpstan.php --no-progress",
+        "test:static:phpstan": "./vendor/bin/phpstan analyse --memory-limit 512M -c .phpstan.neon --no-ansi --no-progress",
         "test:static": [
             "@test:static:phpstan"
         ],
+        "test:unit:phpunit": "./vendor/bin/phpunit tests",
+        "test:unit": [
+            "@test:unit:phpunit"
+        ],
         "test": [
             "@test:syntax",
-            "@test:static"
+            "@test:static",
+            "@test:unit"
         ]
     }
 }

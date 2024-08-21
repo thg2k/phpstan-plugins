@@ -5,7 +5,7 @@ parameters:
 	reportUnmatchedIgnoredErrors: true
 	paths:
 		- lib
-	tmpDir: .phpstan.cache
+	tmpDir: BetterTypeSpecifier.cache
 
 includes:
-	- conf/config.neon
+	- ../../conf/config.neon

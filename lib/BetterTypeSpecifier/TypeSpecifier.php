@@ -62,27 +62,39 @@ class TypeSpecifier
       }
 
       if ($exprNode && $constantType) {
-        /* handle this specific case */
+        if (!$context->null() && $constantType->getValue() === null) {
+          $trueTypes = array(
+            new Type\NullType(),
+            new Type\Constant\ConstantBooleanType(false),
+            new Type\Constant\ConstantIntegerType(0),
+            new Type\Constant\ConstantFloatType(0.0),
+            new Type\Constant\ConstantStringType(''),
+            new Type\Constant\ConstantArrayType([], []),
+          );
+          return $this->create($exprNode, new Type\UnionType($trueTypes), $context, false, $scope, $rootExpr);
+        }
+
         if (!$context->null() && $constantType->getValue() === '') {
           /* There is a difference between php 7.x and 8.x on the equality
            * behavior between zero and the empty string, so to be conservative
            * we leave it untouched regardless of the language version */
           if ($context->true()) {
-            $emptyStringLikeType = new Type\UnionType([
+            $trueTypes = array(
               new Type\NullType(),
               new Type\Constant\ConstantBooleanType(false),
               new Type\Constant\ConstantIntegerType(0),
               new Type\Constant\ConstantFloatType(0.0),
               new Type\Constant\ConstantStringType(''),
-            ]);
-          } else {
-            $emptyStringLikeType = new Type\UnionType([
+            );
+          }
+          else {
+            $trueTypes = array(
               new Type\NullType(),
               new Type\Constant\ConstantBooleanType(false),
               new Type\Constant\ConstantStringType(''),
-            ]);
+            );
           }
-          return $this->create($exprNode, $emptyStringLikeType, $context, false, $scope, $rootExpr);
+          return $this->create($exprNode, new Type\UnionType($trueTypes), $context, false, $scope, $rootExpr);
         }
       }
     }
