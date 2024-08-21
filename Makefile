@@ -11,7 +11,8 @@ all: phpstan-plugins.phar
 .ts.$(git_ts):
 	@touch $@
 
-phpstan-plugins.phar: stub.php bootstrap.php $(source_files) .ts.$(git_ts)
+phpstan-plugins.phar: vendor/seld/phar-utils \
+		stub.php bootstrap.php $(source_files) .ts.$(git_ts)
 	@find . -maxdepth 1 -name ".ts.*" -not -name ".ts.$(git_ts)" -delete
 	@echo -en "\n[+] Building phar file...\n"
 	@$(PHP) -d phar.readonly=0 $(PHAR) pack \
@@ -23,6 +24,9 @@ phpstan-plugins.phar: stub.php bootstrap.php $(source_files) .ts.$(git_ts)
 	@./phar-fixup.php phpstan-plugins.phar $(git_ts)
 	@echo -en "\n[+] Generated file:\n"
 	@md5sum $@
+
+distclean:
+	git clean -xdf
 
 clean:
 	rm -rf .phpstan.cache
