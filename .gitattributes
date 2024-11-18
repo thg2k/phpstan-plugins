@@ -1,0 +1,13 @@
+/.gitignore export-ignore
+/.phpstan.neon export-ignore
+/Makefile export-ignore
+/README.md export-ignore
+/VERSION export-ignore
+/bootstrap.php export-ignore
+/checksum.md5 export-ignore
+/composer.lock export-ignore
+/composer.ver-lock export-ignore
+/phar-fixup.php export-ignore
+/stub.php export-ignore
+/tests/ export-ignore
+/update-version.sh export-ignore
