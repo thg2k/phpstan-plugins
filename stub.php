@@ -1,4 +1,4 @@
-<?php
+<?php /** @package thgnet/phpstan-plugins v@VERSION@ */
 
 Phar::mapPhar('phpstan-plugins.phar');
 

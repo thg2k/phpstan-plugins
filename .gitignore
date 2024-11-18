@@ -2,3 +2,4 @@
 /vendor
 /phpstan-plugins.phar
 /.ts.*
+/_generated
